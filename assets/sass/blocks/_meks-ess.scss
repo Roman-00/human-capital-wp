@@ -1,0 +1,65 @@
+.meks_ess {
+	position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.meks_ess-item {
+		margin: 0 !important;
+
+		&::before {
+			display: flex !important;
+			align-items: center;
+			justify-content: center;
+			width: 24px;
+			height: 24px;
+		}
+	}
+}
+
+.meks_ess .socicon-facebook {
+    order: 2;
+}
+
+.meks_ess .socicon-twitter {
+    order: 3;
+}
+
+.meks_ess .socicon-linkedin {
+    order: 4;
+}
+.meks_ess .socicon-vkontakte {
+    order: 1;
+}
+
+
+.meks_ess .socicon-facebook::before {
+    background: #3e5b98 !important;
+    color: white !important;
+    border-radius: 4px;
+}
+
+.meks_ess .socicon-twitter::before {
+    background: #4da7de !important;
+    color: white !important;
+    border-radius: 4px;
+}
+
+.meks_ess .socicon-linkedin::before {
+    background: #3371b7 !important;
+    color: white !important;
+    border-radius: 4px;
+}
+
+.meks_ess .socicon-vkontakte::before {
+    background: #5a7fa6 !important;
+    color: white !important;
+    border-radius: 4px;
+}
