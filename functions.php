@@ -36,6 +36,80 @@ add_action('manage_pages_custom_column', 'true_custom', 5, 2);
 add_filter('manage_posts_columns', 'true_id', 5);
 add_action('manage_posts_custom_column', 'true_custom', 5, 2);
 
+/** Регистрируем новый тип записей - Партнеры */
+add_action( 'init', 'register_post_types' );
+function register_post_types(){
+    register_post_type( 'partner', [
+        'label'  => null,
+        'labels' => [
+            'name'               => __( 'Партнеры', 'humanexhibition' ), // основное название для типа записи
+            'singular_name'      => __( 'Партнеры', 'humanexhibition' ), // название для одной записи этого типа
+            'add_new'            => __( 'Добавить Партнера', 'humanexhibition' ), // для добавления новой записи
+            'add_new_item'       => __( 'Добавление Партнера', 'humanexhibition' ), // заголовка у вновь создаваемой записи в админ-панели.
+            'edit_item'          => __( 'Редактировать Партнера', 'humanexhibition' ), // для редактирования типа записи
+            'new_item'           => __( 'Новый Партнер', 'humanexhibition' ), // текст новой записи
+            'view_item'          => __( 'Посмотреть Партнера', 'humanexhibition' ), // для просмотра записи этого типа.
+            'search_items'       => __( 'Искать Партнера', 'humanexhibition' ), // для поиска по этим типам записи
+            'not_found'          => __( 'Не найдено', 'humanexhibition' ), // если в результате поиска ничего не было найдено
+            'not_found_in_trash' => __( 'Не найдено в корзине', 'humanexhibition' ), // если не было найдено в корзине
+            'parent_item_colon'  => '', // для родителей (у древовидных типов)
+            'menu_name'          => __( 'Партнеры', 'humanexhibition' ), // название меню
+        ],
+        'description'         => __( 'Part with parthners', 'humanexhibition' ),
+        'public'              => true,
+        'show_admin_column'   => true,
+        // 'publicly_queryable'  => null, // зависит от public
+        // 'exclude_from_search' => null, // зависит от public
+        // 'show_ui'             => null, // зависит от public
+        // 'show_in_nav_menus'   => null, // зависит от public
+        'show_in_menu'        => true, // показывать ли в меню адмнки
+        // 'show_in_admin_bar'   => null, // зависит от show_in_menu
+        'show_in_rest'        => true, // добавить в REST API. C WP 4.7
+        'rest_base'           => null, // $post_type. C WP 4.7
+        'menu_position'       => 5,
+        'menu_icon'           => 'dashicons-media-document',
+        'capability_type'   => 'post',
+        //'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
+        //'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
+        'hierarchical'        => true,
+        'supports'            => [ 'title', 'editor', 'thumbnail', 'custom-fields', 'excerpt', 'custom-fields', 'author' ], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'taxonomies'          => ['parthners'],
+        'has_archive'         => true,
+        'rewrite'             => true,
+        'query_var'           => true,
+    ] );
+}
+
+// хук для регистрации
+add_action( 'init', 'create_taxonomy' );
+function create_taxonomy(){
+
+    // список параметров: wp-kama.ru/function/get_taxonomy_labels
+    register_taxonomy( 'parthners', [ 'partner' ], [
+        'label'                 => '', // определяется параметром $labels->name
+        'labels'                => [
+            'name'              => 'Рубрика',
+            'singular_name'     => 'Рубрика',
+            'search_items'      => 'Найти Рубрику',
+            'all_items'         => 'Все Рубрики',
+            'view_item '        => 'Показать Рубрику',
+            'parent_item'       => 'Родительская Рубрика',
+            'parent_item_colon' => 'Родительская Рубрика:',
+            'edit_item'         => 'Редактировать Рубрику',
+            'update_item'       => 'Обновить Рубрику',
+            'add_new_item'      => 'Добавить Рубрику',
+            'new_item_name'     => 'Новое имя Рубрики',
+            'menu_name'         => 'Рубрика',
+            'back_to_items'     => '← Вернуться к рубрике',
+        ],
+        'description'           => 'Категории для партнеров', // описание таксономии
+        'public'                => true,
+        'publicly_queryable'    => null, // равен аргументу public
+        'hierarchical'          => true,
+        'rewrite'               => true,
+    ] );
+}
+
 /** Breadcrumbs */
 
 /**

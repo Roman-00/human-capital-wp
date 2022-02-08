@@ -148,35 +148,33 @@
                                 <div class="swiper hero-parthners__swiper">
                                     <!-- Additional required wrapper -->
                                     <div class="swiper-wrapper">
-                                        <!-- Slides -->
-                                        <div class="swiper-slide">
-                                            <a href="#" class="hero-parthners__block-logo">
-                                                <img src="<?php echo bloginfo('template_url');?>/assets/images/logo-parthners.png" alt="Manpower Group">
-                                                <!--p>Manpower Group</p -->
-                                            </a>
-                                            <!-- /.hero-parthners__block-logo -->
-                                        </div>
-                                        <!-- Slides -->
-                                        <div class="swiper-slide">
-                                            <a href="#" class="hero-parthners__block-logo">
-                                                <img src="<?php echo bloginfo('template_url');?>/assets/images/logo-parthners-2.png" alt="Manpower Group">
-                                            </a>
-                                            <!-- /.hero-parthners__block-logo -->
-                                        </div>
-                                        <!-- Slides -->
-                                        <div class="swiper-slide">
-                                            <a href="#" class="hero-parthners__block-logo">
-                                                <img src="<?php echo bloginfo('template_url');?>/assets/images/logo-parthners.png" alt="Manpower Group">
-                                            </a>
-                                            <!-- /.hero-parthners__block-logo -->
-                                        </div>
-                                        <!-- Slides -->
-                                        <div class="swiper-slide">
-                                            <a href="#" class="hero-parthners__block-logo">
-                                                <img src="<?php echo bloginfo('template_url');?>/assets/images/logo-parthners-2.png" alt="Manpower Group">
-                                            </a>
-                                            <!-- /.hero-parthners__block-logo -->
-                                        </div>
+                                        <?php
+                                            global $post;
+
+                                            $myposts = get_posts([
+                                                'numberposts' => -1,
+                                                'post_type'   => 'partner',
+                                            ]);
+
+                                            if ($myposts) {
+                                                foreach ($myposts as $post) {
+                                                    setup_postdata($post);
+                                                    ?>
+                                                    <!-- Slides -->
+                                                    <div class="swiper-slide">
+                                                        <a href="<?php the_field('add_link_parthner');?>" target="_blank" class="hero-parthners__block-logo">
+                                                            <img src="<?php the_field('add_logo_parthners');?>" alt="<?php get_the_title(); ?>">
+                                                        </a>
+                                                        <!-- /.hero-parthners__block-logo -->
+                                                    </div>
+                                                    <?php
+                                                }
+                                            } else {
+                                                ?> <p><?php _e('No posts', 'human-exhibition')?></p> <?php
+                                            }
+
+                                            wp_reset_postdata(); // Сбрасываем $post
+                                        ?>
                                     </div>
 
                                     <!-- If we need navigation buttons -->

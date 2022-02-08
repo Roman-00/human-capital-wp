@@ -3,7 +3,7 @@
  */
 const openSubMenu = () => {
 
-	const menuItem = document.getElementsByClassName('menu-nav__item');
+	const menuItem = document.getElementsByClassName('menu-item');
 	
 	/**
 	 * * Перебираем все полученные элементы

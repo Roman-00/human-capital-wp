@@ -81,11 +81,11 @@
             <!-- /.social-link -->
 
             <div class="top-bar-language">
-                <a href="#" class="top-bar-language__link">
+                <a href="https://hcse.asia/en/" class="top-bar-language__link">
                     Eng
                 </a>
                 /
-                <a href="#" class="top-bar-language__link top-bar-language__link--active">
+                <a href="https://hcse.asia/" class="top-bar-language__link top-bar-language__link--active">
                     Rus
                 </a>
             </div>

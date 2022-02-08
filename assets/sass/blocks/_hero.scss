@@ -63,6 +63,10 @@
 .hero-parthners {
 	max-width: 540px;
 	padding-top: 48px;
+
+	.swiper-wrapper {
+		align-items: center;
+	}
 	
 	&__title {
 		margin-bottom: 30px;
@@ -89,6 +93,12 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+
+		img {
+			width: 100%;
+			height: 50px;
+			object-fit: contain;
+		}
 
 		p {
 			display: flex;

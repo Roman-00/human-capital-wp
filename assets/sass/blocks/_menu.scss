@@ -10,7 +10,7 @@
 	padding: 0;
 	list-style: none;
 
-	&__item {
+	.menu-item {
 		font-size: 1.2857rem;
 		line-height: 22px;
 		transition: all 0.3s;
@@ -29,7 +29,7 @@
 			font-size: 14px;
 		}
 
-		.submenu {
+		.sub-menu {
 			position: absolute;
 			top: 220%;
 			height: 0;
