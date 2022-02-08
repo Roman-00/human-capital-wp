@@ -153,7 +153,9 @@
 
                                             $myposts = get_posts([
                                                 'numberposts' => -1,
-                                                'post_type'   => 'partner',
+                                                'post_type'   => 'partners',
+                                                'category_name' => 'slider',
+                                                'suppress_fiters' => true,
                                             ]);
 
                                             if ($myposts) {

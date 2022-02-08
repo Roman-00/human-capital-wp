@@ -128,7 +128,7 @@
                     <?php the_field('header_month_exhibition', 2);?>
                     <span class="text-color-primary">
                         <?php the_field('header_yaer_exhibition', 2);?>
-                    </span> г.
+                    </span>
                 </span>
                 <span class="header-exhibition-date__venue">
                     <?php the_field('header_venue_exhibition', 2);?>
