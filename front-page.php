@@ -13,7 +13,7 @@
 									</span>
                                 </div>
                                 <div class="hero-content__block-timer-description">
-                                    Дня
+                                    <?php the_field('home_timer_day', 2)?>
                                 </div>
                             </div>
                             <!-- /.hero-content__block-timer-number -->
@@ -25,7 +25,7 @@
 									</span>
                                 </div>
                                 <div class="hero-content__block-timer-description">
-                                    Часов
+                                    <?php the_field('home_timer_hourse', 2)?>
                                 </div>
                             </div>
                             <!-- /.hero-content__block-timer-number -->
@@ -37,7 +37,7 @@
 									</span>
                                 </div>
                                 <div class="hero-content__block-timer-description">
-                                    Минут
+                                    <?php the_field('home_timer_minutes', 2)?>
                                 </div>
                             </div>
                             <!-- /.hero-content__block-timer-number -->
@@ -49,7 +49,7 @@
 									</span>
                                 </div>
                                 <div class="hero-content__block-timer-description">
-                                    Секунд
+                                    <?php the_field('home_timer_seconds', 2)?>
                                 </div>
                             </div>
                             <!-- /.hero-content__block-timer-number -->
@@ -57,14 +57,14 @@
                         <!-- /.hero-content__block-timer -->
 
                         <div class="button button--no-bg button-open-modal" data-modal="1">
-                            Регистрация
+                            <?php the_field('home_page_button_registration', 2)?>
                         </div>
                         <!-- /.button button--no-bg button-open-modal -->
 
                         <div class="news-block">
                             <div class="news-block__interface">
                                 <a href="/media-center/" class="news-block__interface-link-more">
-                                    Смотреть все новости
+                                    <?php the_field('view_more_news', 2)?>
                                 </a>
                                 <!-- /.news-block__interface-link-more -->
                             </div>
@@ -140,7 +140,7 @@
                     <div class="hero-parthners">
                         <div class="hero-parthners-wrapper">
                             <h3 class="hero-parthners__title">
-                                Партнеры
+                                <?php the_field('partner', 2)?>
                             </h3>
 
                             <div class="hero-parthners__slider-wrapper">
@@ -148,24 +148,22 @@
                                 <div class="swiper hero-parthners__swiper">
                                     <!-- Additional required wrapper -->
                                     <div class="swiper-wrapper">
+                                        <!-- Slides -->
                                         <?php
                                             global $post;
 
                                             $myposts = get_posts([
                                                 'numberposts' => -1,
-                                                'post_type'   => 'partners',
-                                                'category_name' => 'slider',
-                                                'suppress_fiters' => true,
+                                                'category_name' => 'slider_home_page',
                                             ]);
 
                                             if ($myposts) {
                                                 foreach ($myposts as $post) {
                                                     setup_postdata($post);
                                                     ?>
-                                                    <!-- Slides -->
                                                     <div class="swiper-slide">
                                                         <a href="<?php the_field('add_link_parthner');?>" target="_blank" class="hero-parthners__block-logo">
-                                                            <img src="<?php the_field('add_logo_parthners');?>" alt="<?php get_the_title(); ?>">
+                                                            <img src="<?php the_post_thumbnail_url();?>" alt="<?php echo get_the_title();?>">
                                                         </a>
                                                         <!-- /.hero-parthners__block-logo -->
                                                     </div>

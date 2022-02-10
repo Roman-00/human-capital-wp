@@ -9,6 +9,39 @@
     <div class="container">
         <div class="page-parthners-block">
             <h2 class="page-parthners-block__title">
+                Официальная поддержка
+            </h2>
+            <div class="page-parthners-block__logos">
+                <?php
+                global $post;
+
+                $myposts = get_posts([
+                    'numberposts' => -1,
+                    'category_name' => 'official-partner',
+                ]);
+
+                if ($myposts) {
+                    foreach ($myposts as $post) {
+                        setup_postdata($post);
+                        ?>
+                        <a href="<?php the_field('add_link_parthner');?>" target="_blank" class="page-parthners-block__link">
+                            <img src="<?php the_post_thumbnail_url();?>" alt="<?php echo get_the_title();?>" class="page-parthners-block__image">
+                            <span class="page-parthners-block__desc">
+                                <?php echo get_the_title();?>
+                            </span>
+                        </a>
+                        <?php
+                    }
+                } else {
+                    ?> <p><?php _e('No posts', 'human-exhibition')?></p> <?php
+                }
+
+                wp_reset_postdata(); // Сбрасываем $post
+                ?>
+            </div>
+        </div>
+        <div class="page-parthners-block">
+            <h2 class="page-parthners-block__title">
                 HR партнер
             </h2>
             <div class="page-parthners-block__logos">
@@ -17,8 +50,7 @@
 
                     $myposts = get_posts([
                         'numberposts' => -1,
-                        'post_type'   => 'partner',
-                        'category_name' => 'hr',
+                        'category_name' => 'hr-partner',
                     ]);
 
                     if ($myposts) {
@@ -26,9 +58,9 @@
                             setup_postdata($post);
                             ?>
                             <a href="<?php the_field('add_link_parthner');?>" target="_blank" class="page-parthners-block__link">
-                                <img src="<?php the_field('add_logo_parthners');?>" alt="<?php get_the_title(); ?>" class="page-parthners-block__image">
+                                <img src="<?php the_post_thumbnail_url();?>" alt="<?php echo get_the_title();?>" class="page-parthners-block__image">
                                 <span class="page-parthners-block__desc">
-                                    <?php get_the_title(); ?>
+                                    <?php echo get_the_title();?>
                                 </span>
                             </a>
                             <?php
@@ -51,8 +83,7 @@
 
                     $myposts = get_posts([
                         'numberposts' => -1,
-                        'post_type'   => 'partner',
-                        'category_name' => 'hr',
+                        'category_name' => 'info-partner',
                     ]);
 
                     if ($myposts) {
@@ -60,10 +91,10 @@
                             setup_postdata($post);
                             ?>
                             <a href="<?php the_field('add_link_parthner');?>" target="_blank" class="page-parthners-block__link">
-                                <img src="<?php the_field('add_logo_parthners');?>" alt="<?php get_the_title(); ?>" class="page-parthners-block__image">
+                                <img src="<?php the_post_thumbnail_url();?>" alt="<?php echo get_the_title();?>" class="page-parthners-block__image">
                                 <span class="page-parthners-block__desc">
-                                            <?php get_the_title(); ?>
-                                        </span>
+                                    <?php echo get_the_title();?>
+                                </span>
                             </a>
                             <?php
                         }
@@ -72,6 +103,39 @@
                     }
 
                     wp_reset_postdata(); // Сбрасываем $post
+                ?>
+            </div>
+        </div>
+        <div class="page-parthners-block">
+            <h2 class="page-parthners-block__title">
+                Партнер по блоку “Образование”
+            </h2>
+            <div class="page-parthners-block__logos">
+                <?php
+                global $post;
+
+                $myposts = get_posts([
+                    'numberposts' => -1,
+                    'category_name' => 'education-partner',
+                ]);
+
+                if ($myposts) {
+                    foreach ($myposts as $post) {
+                        setup_postdata($post);
+                        ?>
+                        <a href="<?php the_field('add_link_parthner');?>" target="_blank" class="page-parthners-block__link">
+                            <img src="<?php the_post_thumbnail_url();?>" alt="<?php echo get_the_title();?>" class="page-parthners-block__image">
+                            <span class="page-parthners-block__desc">
+                                <?php echo get_the_title();?>
+                            </span>
+                        </a>
+                        <?php
+                    }
+                } else {
+                    ?> <p><?php _e('No posts', 'human-exhibition')?></p> <?php
+                }
+
+                wp_reset_postdata(); // Сбрасываем $post
                 ?>
             </div>
         </div>

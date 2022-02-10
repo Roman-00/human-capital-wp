@@ -8,15 +8,35 @@
 <section class="page-parthners" id="page-parthners">
     <div class="container">
         <div class="page-parthners-block">
-            <a href="https://mybusiness.kz/" target="_blank" class="page-parthners-block__link">
-                <h2 class="page-parthners-block__title">
-                    информационный партнер
-                </h2>
-                <img src="<?php echo bloginfo('template_url');?>/assets/images/parthners/my-bussines.svg" alt="My Busiines" class="page-parthners-block__image">
-                <span class="page-parthners-block__desc">
-                    MyBusiness
-                </span>
-            </a>
+            <h2 class="page-parthners-block__title">
+                информационный партнер
+            </h2>
+            <?php
+                global $post;
+
+                $myposts = get_posts([
+                    'numberposts' => -1,
+                    'category_name' => 'info-partner',
+                ]);
+
+                if ($myposts) {
+                    foreach ($myposts as $post) {
+                        setup_postdata($post);
+                        ?>
+                        <a href="<?php the_field('add_link_parthner');?>" target="_blank" class="page-parthners-block__link">
+                            <img src="<?php the_post_thumbnail_url();?>" alt="<?php echo get_the_title();?>" class="page-parthners-block__image">
+                            <span class="page-parthners-block__desc">
+                                        <?php echo get_the_title();?>
+                                    </span>
+                        </a>
+                        <?php
+                    }
+                } else {
+                    ?> <p><?php _e('No posts', 'human-exhibition')?></p> <?php
+                }
+
+                wp_reset_postdata(); // Сбрасываем $post
+            ?>
         </div>
     </div>
 </section>

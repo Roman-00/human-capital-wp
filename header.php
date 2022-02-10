@@ -81,11 +81,11 @@
             <!-- /.social-link -->
 
             <div class="top-bar-language">
-                <a href="https://hcse.asia/en/" class="top-bar-language__link">
+                <a href="https://hcse.asia/en/" class="top-bar-language__link top-bar-language__link-eng">
                     Eng
                 </a>
                 /
-                <a href="https://hcse.asia/" class="top-bar-language__link top-bar-language__link--active">
+                <a href="https://hcse.asia/" class="top-bar-language__link top-bar-language__link-rus">
                     Rus
                 </a>
             </div>
@@ -167,11 +167,11 @@
     <div class="mobile-menu__block">
         <button class="mobile-menu__block-close"></button>
         <div class="mobile-menu__block-language">
-            <a href="#" class="mobile-menu__block-language-link">
+            <a href="https://hcse.asia/en/" class="mobile-menu__block-language-link mobile-menu__block-language-link-eng">
                 Eng
             </a>
             /
-            <a href="#" class="mobile-menu__block-language-link mobile-menu__block-language-link--active">
+            <a href="https://hcse.asia/" class="mobile-menu__block-language-link mobile-menu__block-language-link-rus">
                 Rus
             </a>
         </div>

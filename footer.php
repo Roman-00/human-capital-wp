@@ -24,17 +24,17 @@
 
             <div class="footer-content__info">
 					<span class="footer-content__info-copyright">
-						© Human Capital. Все права защищены
+						© Human Capital. <?php the_field('all_rights_reserved', 2)?>
 					</span>
 
                 <a href="#" class="footer-content__info-policy">
-                    Политика конфиденциальности
+                    <?php the_field('privacy_policy', 2)?>
                 </a>
             </div>
             <!-- /.footer-content__info -->
 
-            <button class="button footer-button button--subscribe">
-                Подписаться
+            <button class="button footer-button button--subscribe button-open-modal" data-modal="3">
+                <?php the_field('btn_subscribe', 2)?>
             </button>
             <!-- /.button footer-button button-subscribe -->
         </div>

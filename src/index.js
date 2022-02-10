@@ -6,6 +6,7 @@ elementClosest(window);
 import 'es6-promise';
 import 'fetch-polyfill';
 
+import activeLanguage from './modules/activeLanguage';
 import openSubMenu from './modules/openSubMenu';
 import newsSlider from './modules/newsSlider';
 import parthnersSlider from './modules/parthnersSlider';
@@ -22,6 +23,11 @@ window.addEventListener('DOMContentLoaded', () => {
 	const mobileMenuButton = document.querySelector('.top-bar__menu');
 	const pageMedia = document.querySelector('.page-media');
 	let deadline = '2022-09-21';
+
+	/**
+	 * Смена активности у языков
+	 */
+	activeLanguage();
 
 	/**
 	 * * Открываем выпадающее меню
