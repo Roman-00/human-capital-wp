@@ -45,9 +45,7 @@
 <div class="popup">
     <div class="popup-content">
         <button class="popup-close"></button>
-        <h3 class="popup-title">
-            Стать делегатом саммита
-        </h3>
+        <h3 class="popup-title"></h3>
         <div class="popup-content-body"></div>
     </div>
 </div>

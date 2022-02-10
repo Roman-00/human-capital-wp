@@ -176,57 +176,18 @@
             </a>
         </div>
         <nav class="mobile-menu-navigation">
-            <ul class="mobile-menu__list">
-                <li class="menu-item">
-                    <a href="#">Саммит</a>
-                    <ul class="sub-menu">
-                        <li class="menu-item">
-                            <a href="sammit.html">О Саммите</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="sammit.html">Программа Саммита</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="sammit.html">Участники</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="sammit.html">Отправить заявку</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu-item">
-                    <a href="#">Выставка</a>
-                    <ul class="sub-menu">
-                        <li class="menu-item">
-                            <a href="exhibition.html">О выставке</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="exhibition.html">План выставки</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="exhibition.html" class="button-exhibition">Заявка на участие</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu-item">
-                    <a href="#">Спикеры</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#">Регистрация</a>
-                </li>
-                <li class="menu-item">
-                    <a href="parthners.html">Партнеры</a>
-                </li>
-                <li class="menu-item">
-                    <a href="#">Официальная поддержка</a>
-                </li>
-                <li class="menu-item">
-                    <a href="media.html">Медиа-центр</a>
-                </li>
-                <li class="menu-item">
-                    <a href="info-parthners.html">Информационная поддержка</a>
-                </li>
-            </ul>
+            <?php
+            wp_nav_menu( [
+                'menu'            => 'Header',
+                'container'       => false,
+                'menu_class'      => 'mobile-menu__list',
+                'menu_id'         => 'header-menu-nav',
+                'echo'            => true,
+                'fallback_cb'     => 'wp_page_menu',
+                'items_wrap'      => '<ul id="header-menu-nav" class="mobile-menu__list">%3$s</ul>',
+                'depth'           => 2,
+            ] );
+            ?>
         </nav>
     </div>
     <div class="mobile-menu__overlay"></div>
