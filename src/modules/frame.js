@@ -16,6 +16,14 @@ const frame = () => {
 				const frame = `<iframe src="https://form.hcse.asia/?count=${count}" width="100%" height="100%">Ваш браузер не поддерживает iframe!</iframe>`;
 				// iframeBlock.style.display = 'block';
 				iframeBlock.insertAdjacentHTML('beforeend', frame);
+			} else if (count === 3) {
+				const frame = `<iframe src="https://form.hcse.asia/?count=${count}" width="100%" height="100%">Ваш браузер не поддерживает iframe!</iframe>`;
+				// iframeBlock.style.display = 'block';
+				iframeBlock.insertAdjacentHTML('beforeend', frame);
+			} else if (count === 4) {
+				const frame = `<iframe src="https://form.hcse.asia/?count=${count}" width="100%" height="100%">Ваш браузер не поддерживает iframe!</iframe>`;
+				// iframeBlock.style.display = 'block';
+				iframeBlock.insertAdjacentHTML('beforeend', frame);
 			}
 		});
 	});

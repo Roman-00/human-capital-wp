@@ -2009,6 +2009,20 @@ iframe {
   position: relative;
 }
 
+.page-parthners-block__logos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .page-parthners-block__link {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2026,6 +2040,7 @@ iframe {
 .page-parthners-block__title {
   margin: 20px 0;
   text-transform: uppercase;
+  text-align: center;
   color: #1a1a1a;
 }
 
@@ -2037,7 +2052,10 @@ iframe {
 }
 
 .page-parthners-block__desc {
+  display: block;
+  max-width: 280px;
   margin: 20px 0;
+  text-align: center;
 }
 
 .page-media {

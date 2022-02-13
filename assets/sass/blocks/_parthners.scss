@@ -5,6 +5,13 @@
 
 .page-parthners-block {
 	position: relative;
+	
+	&__logos {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
 
 	&__link {
 		display: flex;
@@ -16,6 +23,7 @@
 	&__title {
 		margin: 20px 0;
 		text-transform: uppercase;
+		text-align: center;
 		color: $text-color;
 	}
 
@@ -26,6 +34,9 @@
 	}
 
 	&__desc {
+		display: block;
+		max-width: 280px;
 		margin: 20px 0;
+		text-align: center;
 	}
 }
