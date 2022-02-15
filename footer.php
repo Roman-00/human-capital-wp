@@ -33,7 +33,7 @@
             </div>
             <!-- /.footer-content__info -->
 
-            <button class="button footer-button button--subscribe button-open-modal" data-modal="3">
+            <button class="button footer-button button--subscribe button-open-modal-sub" data-modal="<?php the_field('data-modal-subscribe', 2)?>">
                 <?php the_field('btn_subscribe', 2)?>
             </button>
             <!-- /.button footer-button button-subscribe -->
@@ -47,6 +47,14 @@
         <button class="popup-close"></button>
         <h3 class="popup-title"></h3>
         <div class="popup-content-body"></div>
+    </div>
+</div>
+
+<div class="popup popup-subscribe">
+    <div class="popup-content">
+        <button class="popup-close"></button>
+        <h3 class="popup-title"></h3>
+        <div class="popup-content-body popup-content-body-subscribe"></div>
     </div>
 </div>
 

@@ -56,7 +56,7 @@
                         </div>
                         <!-- /.hero-content__block-timer -->
 
-                        <div class="button button--no-bg button-open-modal" data-modal="1">
+                        <div class="button button--no-bg button-open-modal" data-modal="<?php the_field('data-modal-registration', 2);?>">
                             <?php the_field('home_page_button_registration', 2)?>
                         </div>
                         <!-- /.button button--no-bg button-open-modal -->
