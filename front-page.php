@@ -112,7 +112,7 @@
 
                                                             <div class="news-block__card-inter">
                                                                 <a href="<?php echo get_the_permalink();?>" class="news-block__card-link-more">
-                                                                    Читать новость
+                                                                    <?php the_field('read_news', 2)?>
                                                                 </a>
                                                             </div>
                                                         </div>

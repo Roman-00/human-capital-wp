@@ -40,6 +40,14 @@
 
 .popup-content-body {
 	height: 830px;
+
+	@media screen and (max-height: 780px) {
+		height: 586px;
+	}
+
+	@media screen and (max-height: 585px) {
+		height: 460px;
+	}
 }
 
 .popup-content-body-subscribe {

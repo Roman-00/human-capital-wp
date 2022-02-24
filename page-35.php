@@ -1,22 +1,22 @@
 <?php
 /*
-    Template Name: Страница Инфо-Партнеры
+    Template Name: Страница Официальная поддержка
     Template Post Type: page
 */
 ?>
 <?php get_header(); ?>
-<section class="page-parthners" id="page-parthners">
-    <div class="container">
-        <div class="page-parthners-block">
-            <h2 class="page-parthners-block__title">
-                <?php the_field('name_category_parthners_info', 2)?>
-            </h2>
-            <?php
+    <section class="page-parthners" id="page-parthners">
+        <div class="container">
+            <div class="page-parthners-block">
+                <h2 class="page-parthners-block__title">
+                    <?php the_field('name_category_parthners_oficial', 2)?>
+                </h2>
+                <?php
                 global $post;
 
                 $myposts = get_posts([
                     'numberposts' => -1,
-                    'category_name' => 'info-partner',
+                    'category_name' => 'official-partner',
                 ]);
 
                 if ($myposts) {
@@ -36,8 +36,8 @@
                 }
 
                 wp_reset_postdata(); // Сбрасываем $post
-            ?>
+                ?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 <?php get_footer(); ?>

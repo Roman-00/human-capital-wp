@@ -1370,6 +1370,18 @@ iframe {
   height: 830px;
 }
 
+@media screen and (max-height: 780px) {
+  .popup-content-body {
+    height: 586px;
+  }
+}
+
+@media screen and (max-height: 585px) {
+  .popup-content-body {
+    height: 460px;
+  }
+}
+
 .popup-content-body-subscribe {
   height: 320px !important;
 }

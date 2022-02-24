@@ -9,7 +9,7 @@
     <div class="container">
         <div class="page-parthners-block">
             <h2 class="page-parthners-block__title">
-                Официальная поддержка
+                <?php the_field('name_category_parthners_oficial', 2)?>
             </h2>
             <div class="page-parthners-block__logos">
                 <?php
@@ -42,7 +42,7 @@
         </div>
         <div class="page-parthners-block">
             <h2 class="page-parthners-block__title">
-                HR партнер
+                <?php the_field('name_category_parthners_hr', 2)?>
             </h2>
             <div class="page-parthners-block__logos">
                 <?php
@@ -75,7 +75,7 @@
         </div>
         <div class="page-parthners-block">
             <h2 class="page-parthners-block__title">
-                информационный партнер
+                <?php the_field('name_category_parthners_info', 2)?>
             </h2>
             <div class="page-parthners-block__logos">
                 <?php
@@ -108,7 +108,7 @@
         </div>
         <div class="page-parthners-block">
             <h2 class="page-parthners-block__title">
-                Партнер по блоку “Образование”
+                <?php the_field('name_category_parthners_education', 2)?>
             </h2>
             <div class="page-parthners-block__logos">
                 <?php
